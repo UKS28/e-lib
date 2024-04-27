@@ -7,4 +7,6 @@
   - set up eslint for syntax error (download eslint extension) & npm init @eslint/config
   - setting up prettier
   - setting up express server (npm i -D @types/express)
+  - installing dot env
+  - creating config.ts & export config from file
   
