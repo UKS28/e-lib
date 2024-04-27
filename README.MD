@@ -10,3 +10,4 @@
   - installing dot env
   - creating config.ts & export config from file
   - MongoDb atlas ,database connection set up && Mongoose installation
+  - Global error handlin using http-errors module

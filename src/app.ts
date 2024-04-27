@@ -1,4 +1,5 @@
 import express from "express"
+import globalErrorHandler from "./Middleware/globalErrorHandler";
 
 const app=express();
 
@@ -9,4 +10,8 @@ app.get('/',(req,res,next)=>{
         message:"hello from server",
     })
 })
+
+// error handling
+app.use(globalErrorHandler);
+
 export default app;
