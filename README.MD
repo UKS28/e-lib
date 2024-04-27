@@ -9,4 +9,4 @@
   - setting up express server (npm i -D @types/express)
   - installing dot env
   - creating config.ts & export config from file
-  
+  - MongoDb atlas ,database connection set up && Mongoose installation
