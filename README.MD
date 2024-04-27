@@ -6,3 +6,5 @@
   - gitignore extension -->ctrl+shift+p then choose node
   - set up eslint for syntax error (download eslint extension) & npm init @eslint/config
   - setting up prettier
+  - setting up express server (npm i -D @types/express)
+  
