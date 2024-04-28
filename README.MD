@@ -23,5 +23,12 @@
       - creating user and storing user
       - generating JWT token
     - step3:Responding JWT token
+  
+  - Work on Login
+    - email or password not provided
+    - search email in database
+      - not found --> error
+      - found --> compare password--> match create and return JWT Token
+
 
       

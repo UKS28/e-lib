@@ -6,6 +6,8 @@ import bcrypt from "bcrypt";
 import { sign } from "jsonwebtoken";
 import { config } from "../config/config";
 import { User } from "./userTypes";
+
+
 const createUser=async (req:Request,res:Response,next:NextFunction)=>{
     const { name,email,password }=req.body;
 
@@ -45,12 +47,12 @@ const createUser=async (req:Request,res:Response,next:NextFunction)=>{
     }
    
 
+    // 3.response
     try{
         const token=sign({ sub: newUser._id },config.jwt_secret as string,{
             expiresIn:"7d",
         });
-        // 3.response
-         res.json({
+         res.status(201).json({
             accessToken:token
          })
     }
@@ -58,12 +60,43 @@ const createUser=async (req:Request,res:Response,next:NextFunction)=>{
     {
         return next(createHttpError(500,"error occured while JWT token generation"));
     }
-    
-
-
     //  res.json({
     //     "message":"user registered"
     //  });
 }
 
-export {createUser};
+const loginUser=async(req:Request,res:Response,next:NextFunction)=>{
+    // extract email and password
+    const { email, password }=req.body;
+    if(!email || !password){
+        return next(createHttpError(400,"email or password and provided"));
+    }
+    
+    // find email
+    const user=await userModel.findOne({email});
+
+    // if not found
+    if(!user){
+        return next(createHttpError(404,"user not found"));
+    }
+   
+    // comapre with the iven password
+    const match=await bcrypt.compare(password,user.password);
+    
+    // if not match
+    if(!match){
+        return next(createHttpError(400,"incorrect password"));
+    }
+
+    // return jwt token
+    
+    const token=sign({ sub: user._id },config.jwt_secret as string,{
+        expiresIn:"7d",
+    });
+     res.status(200).json({
+        accessToken:token
+     })
+
+}
+
+export {createUser,loginUser};
