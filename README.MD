@@ -18,4 +18,10 @@
     - step1 :Validation
       - detail not provided 
       - user already exists
+    - step2:processing
+      - hashing password (bcrypt)
+      - creating user and storing user
+      - generating JWT token
+    - step3:Responding JWT token
+
       
