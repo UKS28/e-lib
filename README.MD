@@ -32,4 +32,7 @@
 
 - Book Routing
   - settinng the book route creating schema
+  - multer installation for file related work and creating middleware
+  - 
+
       
