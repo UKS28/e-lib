@@ -14,3 +14,8 @@
 
 - User Routing
   - Work on Register 
+    - req.body to work -json parser required ( app.use(express.json()))
+    - step1 :Validation
+      - detail not provided 
+      - user already exists
+      
