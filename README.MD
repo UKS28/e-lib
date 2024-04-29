@@ -37,6 +37,8 @@
   - creating book 
     - upload coverimage and file on cloudnary(cloudinary issue while uploading PDF)
     - insert all the data in book model
+    - adding authenticated auther (must have jwt token)
+      - create authenticate middleware and add token to response
 
 
       
