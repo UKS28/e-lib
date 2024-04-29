@@ -33,6 +33,10 @@
 - Book Routing
   - settinng the book route creating schema
   - multer installation for file related work and creating middleware
-  - 
+  - cloudnary
+  - creating book 
+    - upload coverimage and file on cloudnary(cloudinary issue while uploading PDF)
+    - insert all the data in book model
+
 
       
